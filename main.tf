@@ -28,19 +28,7 @@ resource "aws_instance" "app_server" {
   ami           = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
 key_name = "Iac-alura"
-# user_data = <<-EOF
-# #!/bin/bash
-# # Garante que estamos no diretório correto com o caminho absoluto
-# echo "<h1>Feito com Terraform</h1>" > /home/ubuntu/index.html
-
-# # Ajusta permissão para o usuário ubuntu conseguir ver/editar depois
-# chown ubuntu:ubuntu /home/ubuntu/index.html
-
-# # Sobe o servidor no diretório onde o arquivo foi criado
-# cd /home/ubuntu
-# nohup busybox httpd -f -p 8080 &
-# EOF
   tags = {
-    Name = "teste-instancia"
+    Name = "terraform Ansible python"
   }
 }
